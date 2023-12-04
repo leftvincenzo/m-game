@@ -1,6 +1,4 @@
-# M-GAME - Avventura Fantastica
-
-Un semplice gioco basato su testo ASCII in C++;
+# M-GAME
 
 ## Descrizione del Gioco:
 M-GAME ti permetterà di combattere contro mostri, completare missioni e scappare da tranelli
