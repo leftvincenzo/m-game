@@ -22,8 +22,7 @@ int main()
 	string n;
 	string div = "-----------";
 	string a = "|";
-	int v = 10;
-	int s1, i;
+	int v = 10, s1, i, exp=0;
 	const char S = ' ';
 	char r = 'X';
 	char ds, sc;
@@ -46,7 +45,7 @@ int main()
 
 	// Avvio avventura
 	cout << div << "[" << n << "]" << div << endl;
-	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << endl;
+	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
 	cout << "    (+!+)" << endl;
 	cout << "    __|__    " << endl;
@@ -62,7 +61,7 @@ int main()
 
 	// Menu selezione arma
 	cout << div << "[" << n << "]" << div << endl;
-	cout << a << "HP:" << v << a << " " << endl;
+	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
 	cout << "SELEZIONA LA TUA ARMA:" << endl;
 	cout << div << "--" << div << endl;
@@ -107,14 +106,14 @@ int main()
 		cin >> r;
 	}
 
-	Sleep(2000);
+	Sleep(3000);
 	system("cls");
 
 
 	// Missione 1
 	system("color b");
 	cout << div << "[" << n << "]" << div << endl;
-	cout << a << "HP:" << v << a << " " << "ARMA:" << r << a << endl;
+	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
 	cout << S << endl;
 	cout << "    (+!+)" << endl;
@@ -140,7 +139,7 @@ int main()
 	{
 		system("cls");
 		cout << div << "[" << n << "]" << div << endl;
-		cout << a << "HP:" << v << a << " " << "ARMA:" << r << a << endl;
+		cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 		cout << div << "--" << div << endl;
 		cout << "             [(-_-)]" << endl;
 		cout << "    (x!X)      | | (*) " << endl;
@@ -153,7 +152,7 @@ int main()
 		system("cls");
 		system("color b");
 		cout << div << "[" << n << "]" << div << endl;
-		cout << a << "HP:" << v << a << " " << "ARMA:" << "X" << a << endl;
+		cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 		cout << div << "--" << div << endl;
 		cout << "      [(-_-)]" << endl;
 		cout << "        | | (*)" << endl;
@@ -173,7 +172,7 @@ int main()
 	{
 		system("cls");
 		cout << div << "[" << n << "]" << div << endl;
-		cout << a << "HP:" << v << a << " " << "ARMA:" << r << a << endl;
+		cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 		cout << div << "--" << div << endl;
 		system("color a");
 		cout << "             [(-_-)]" << endl;
@@ -190,7 +189,7 @@ int main()
 		v -= 3;
 
 		cout << div << "[" << n << "]" << div << endl;
-		cout << a << "HP:" << v << a << " " << "ARMA:" << r << a << endl;
+		cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 		cout << div << "--" << div << endl;
 		cout << S << endl;
 		cout << "    (+!+)" << endl;
@@ -208,7 +207,7 @@ int main()
 	system("cls");
 	system("color b");
 	cout << div << "[" << n << "]" << div << endl;
-	cout << a << "HP:" << v << a << " " << "ARMA:" << r << a << endl;
+	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
 	cout << S << endl;
 	cout << "    (+!+)" << endl;
@@ -229,14 +228,7 @@ int main()
 		Sleep(2000);
 		cout << " ... non sanno volare ..." << endl;
 
-		for (i = 0; i < 10; i++)
-		{
-			Sleep(1000);
-			system("color c");
-			Sleep(1000);
-			system("color 4");
-			cout << "GAME OVER!!!" << endl;
-		}
+		gameover();
 		system("pause");
 		return 0;
 	}
@@ -244,10 +236,10 @@ int main()
 	{
 		system("cls");
 		cout << div << "[" << n << "]" << div << endl;
-		cout << a << "HP:" << v << a << " " << "ARMA:" << r << a << endl;
+		cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 		cout << div << "--" << div << endl;
 		cout << S << endl;
-		cout << "    (+!+)      (@!@)" << endl;
+		cout << "    (+!+)       (@!@)" << endl;
 		cout << "    __|__    	 _|_ " << endl;
 		cout << "      |     	  |	" << endl;
 		cout << "    _|-|_    	 L L" << endl;
@@ -267,14 +259,7 @@ int main()
 			Sleep(2000);
 			cout << "Il Mercante ti ha teso una trappola!" << endl;
 			cout << "Sei morto." << endl;
-			for (i = 0; i < 10; i++)
-			{
-				Sleep(1000);
-				system("color c");
-				Sleep(1000);
-				system("color 4");
-				cout << "GAME OVER!!!" << endl;
-			}
+			gameover();
 			system("pause");
 			return 0;
 		}
@@ -291,14 +276,6 @@ int main()
 			cin >> sc;
 		}
 	}
-	else
-	{
-
-	}
-	{
-		cout << "Scegli inserendo l'iniziale della direzione! D o S" << endl;
-		cin >> ds;
-	}
 
 	// CONCLUSIONE
 	system("cls");
@@ -309,7 +286,7 @@ int main()
 	cout << " |             CREDITI DEL CREATORE DI M-GAME                 |\n";
 	cout << " |____________________________________________________________|\n";
 	cout << " |                                                            |\n";
-	cout << " |  Data ultima modifica:        02/12/2023                   |\n";
+	cout << " |  Data ultima modifica:        05/12/2023                   |\n";
 	cout << " |  Versione gioco:              1.2                          |\n";
 	cout << " |                                                            |\n";
 	cout << " |____________________________________________________________|\n";
