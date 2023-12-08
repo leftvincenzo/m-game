@@ -58,7 +58,7 @@ int main()
 	cout << div << "--" << div << endl;
 	cout << pl << endl;
 	cout << div << "--" << div << endl;
-	cout << a << "S) Spada" << a << "A) Arco" << a << "K) Katana" << endl;
+	cout << "S) Spada - A) Arco - K) Katana" << endl;
 	cout << div << "--" << div << endl;
 	cout << "Scegli la tua arma: ";
 	cin >> r;
@@ -86,10 +86,11 @@ int main()
 	}
 
 	Sleep(3000);
-	system("cls");
 
 	// MISSION I
 	system("color b");
+	system("cls");
+	exp++;
 	cout << div << "[" << n << "]" << div << endl;
 	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
@@ -121,7 +122,7 @@ int main()
 		cout << "    (x!X)      | | (*) " << endl;
 		cout << "    __|__    --| |--|" << endl;
 		cout << "      |        | |  |" << endl;
-		cout << "     _|-|_    _| |_" << endl;
+		cout << "    _|-|_    _| |_" << endl;
 		cout << div << "--" << div << endl;
 		cout << "Hai scelto di fare amicizia con il mostro!" << endl;
 		Sleep(2000);
@@ -154,7 +155,7 @@ int main()
 		cout << "    (+!+)      | | (*) " << endl;
 		cout << "    __|__    --| |--|" << endl;
 		cout << "      |        | |  |" << endl;
-		cout << "     _|-|_    _| |_" << endl;
+		cout << "    _|-|_    _| |_" << endl;
 		cout << div << "--" << div << endl;
 		cout << "Hai deciso di combattere contro il mostro!" << endl;
 
@@ -178,7 +179,7 @@ int main()
 	// MISSION II
 	system("cls");
 	exp++;
-	system("color b");
+	system("color e");
 	cout << div << "[" << n << "]" << div << endl;
 	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
@@ -222,11 +223,13 @@ int main()
 	}
 	// MISSION III
 		system("cls");
+		exp++;
+		system("color a");
 		cout << div << "[" << n << "]" << div << endl;
 		cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 		cout << div << "--" << div << endl;
 		cout << S << endl;
-		cout << "    (+!+)			(@-@)" << endl;
+		cout << "    (+!+)      (@-@)" << endl;
 		cout << "    __|__    	 _|_ " << endl;
 		cout << "      |     	  |	" << endl;
 		cout << "    _|-|_    	 L L" << endl;
