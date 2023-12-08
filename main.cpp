@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// GAMEOVEr
+// GAMEOVER
 
 void fine() {
 
@@ -27,9 +27,9 @@ int main()
 {
 
 	// DECLARETIONS
-	string n, div = "-----------", a = "|";
-	int v = 10, s1, i, exp = 0;
-	char r = 'X', S = ' ', ds, sc;
+	string n, div = "-----------", a = "|", pl = "     (+!+)\n    __ | __    \n       | \n    _ |-| _    ";
+	int v = 10, s1, i, exp = 0, ds, sc;
+	char r = 'X', S = ' ';
 
 	// LOGIN
 	system("color 6");
@@ -44,21 +44,21 @@ int main()
 	cout << div << "[" << n << "]" << div << endl;
 	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
-	cout << "    (+!+)\n    __|__    \n      |     \n    _|-|_    " << endl;
+	cout << pl << endl;
 	cout << div << "--" << div << endl;
 	cout << "La tua avventura iniziera tra 5 secondi!!" << endl;
 
 	Sleep(5000);
-	system("cls");
+	system("cls");	
 	system("color 1");
 
 	// WEAPON SELECTION
 	cout << div << "[" << n << "]" << div << endl;
 	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
-	cout << "    (+!+)\n    __|__    \n      |     \n    _|-|_    " << endl;
+	cout << pl << endl;
 	cout << div << "--" << div << endl;
-	cout << a << "1) Spada: S " << a << "2) Arco: A " << a << "3) Katana: k " << endl;
+	cout << a << "S) Spada" << a << "A) Arco" << a << "K) Katana" << endl;
 	cout << div << "--" << div << endl;
 	cout << "Scegli la tua arma: ";
 	cin >> r;
@@ -68,36 +68,21 @@ int main()
 		exp++;
 		cout << "Hai scelto la spada!" << endl;
 		cout << S << endl;
-		cout << "      /| ________________\n";
-		cout << "O|===|* >________________>\n";
-		cout << "      \\|\n";
+		cout << "      /| ________________\nO|===|* >________________>\n      \\|\n";
 	}
 	else if ((r == 'A') || (r == 'a'))
 	{
 		exp++;
 		cout << "Hai scelto l'arco!" << endl;
 		cout << S << endl;
-		cout << "   (\n";
-		cout << "    \\\n";
-		cout << "     )\n";
-		cout << "##-------->\n";
-		cout << "     )\n";
-		cout << "    /\n";
-		cout << "   (\n";
+		cout << "   (\n    \\\n     )\n##-------->\n     )\n    /\n   (\n";
 	}
 	else if ((r == 'K') || (r == 'k'))
 	{
 		exp++;
 		cout << "Hai scelto la katana!" << endl;
 		cout << S << endl;
-		cout << "._._.|___________________" << endl;
-		cout << "|_|_||__________________/" << endl;
-		cout << "     |         " << endl;
-	}
-	else
-	{
-		cout << "Inserisci l'iniziale di un'arma!!!" << endl;
-		cin >> r;
+		cout << "._._.|___________________\n|_|_||__________________/\n     |         " << endl;
 	}
 
 	Sleep(3000);
@@ -109,7 +94,7 @@ int main()
 	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
 	cout << S << endl;
-	cout << "    (+!+)\n    __|__    \n      |     \n    _|-|_    " << endl;
+	cout << pl << endl;
 	cout << div << "--" << div << endl;
 	cout << "Hai incontrato un mostro, che fai?" << endl;
 	cout << "1) Scappi" << a << " 2) Combatti" << a << " 3) Fai amicizia" << endl;
@@ -183,7 +168,7 @@ int main()
 		cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 		cout << div << "--" << div << endl;
 		cout << S << endl;
-		cout << "    (+!+)\n    __|__    \n      |     \n    _|-|_    " << endl;
+		cout << pl << endl;
 		cout << div << "--" << div << endl;
 		cout << "Hai sconfitto il mostro!" << endl;
 		cout << "Stato salute aggiornato." << endl;
@@ -198,32 +183,50 @@ int main()
 	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
 	cout << S << endl;
-	cout << "    (+!+)\n    __|__    \n      |     \n    _|-|_    " << endl;
+	cout << pl << endl;
 	cout << div << "--" << div << endl;
 	cout << "Ti trovi in un bivio... Dove vai?" << endl;
-	cout << "1) Destra: D" << a << " 2) Sinistra: S" << endl;
+	cout << "1) Destra" << a << " 2) Sinistra" << endl;
 	cin >> ds;
 
-	if ((ds == 'D') || (ds == 'd'))
+	if (ds == 1)
 	{
+		int a, b, solu, risp;
 		cout << "Sei finito in un burrone!" << endl;
+		srand(time(NULL));
+		a = rand() % 3;
 		Sleep(1000);
-		cout << "Putroppo gli umani anche nel nostro mondo fantastico..." << endl;
-		Sleep(2000);
-		cout << " ... non sanno volare ..." << endl;
-
-		fine();
-		system("pause");
-		return 0;
+		b = rand() % 5;
+		risp = a+b;
+		cout << "Risolvi la seguente addizione: " << a << " + " << b << endl;
+		cin >> solu;
+		if (solu != risp) 
+		{	
+			cout << "Hai sbagliato!!" << endl;
+			Sleep(2000);
+			cout << "Putroppo gli umani anche nel nostro mondo fantastico..." << endl;
+			Sleep(2000);
+			cout << " ... non sanno volare ..." << endl;
+			Sleep(3500);
+			fine();
+			system("pause");
+			return 0;
+		}
+		
+		else {
+			cout << "Risposta corretta!" << endl;
+			Sleep(2000);
+			cout << "Prosegui l'avventura!" << endl;
+			Sleep(2000);
+		}
 	}
-	else if ((ds == 'S') || (ds == 's'))
-	{
+	// MISSION III
 		system("cls");
 		cout << div << "[" << n << "]" << div << endl;
 		cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 		cout << div << "--" << div << endl;
 		cout << S << endl;
-		cout << "    (+!+)       (@-@)" << endl;
+		cout << "    (+!+)			(@-@)" << endl;
 		cout << "    __|__    	 _|_ " << endl;
 		cout << "      |     	  |	" << endl;
 		cout << "    _|-|_    	 L L" << endl;
@@ -233,10 +236,10 @@ int main()
 		Sleep(1000);
 		cout << "Ti sta offrendo di scambiare la tua arma in cambio di una scatola misteriosa." << endl;
 		cout << "Che scegli?" << endl;
-		cout << "1) Si: S" << a << " 2) No: N" << endl;
+		cout << "1) Si" << a << " 2) No" << endl;
 		cin >> sc;
 		Sleep(1000);
-		if ((sc == 's') || (sc == 'S'))
+		if (sc == 1)
 		{
 			cout << "Scelta errata..." << endl;
 			Sleep(2000);
@@ -244,20 +247,13 @@ int main()
 			cout << "Sei morto." << endl;
 			fine();
 		}
-		else if ((sc == 'n') || (sc == 'N'))
+		else
 		{
 			exp++;
 			cout << "Ottima scelta!" << endl;
 			Sleep(2000);
 			cout << "Voci dicono che il mercante sia un truffatore.." << endl;
 			Sleep(3000);
-		}
-		else
-		{
-			cout << "Scegli inserendo Si: S, o, No: N" << endl;
-			cin >> sc;
-		}
-	}
 
 	// END
 	Sleep(3000);
@@ -265,4 +261,5 @@ int main()
 
 	system("pause");
 	return 0;
+	}
 }
