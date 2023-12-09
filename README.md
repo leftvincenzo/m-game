@@ -3,9 +3,6 @@
 ## Descrizione del Gioco:
 M-GAME ti permetterà di combattere contro mostri, completare missioni e scappare da tranelli
 
-## Caratteristiche Principali:
-- **SELFCODED** Scritto interamente con le mie conoscenze in c++ e msdos (corrispondente al batch di windows)
-
 ## Requisiti di Sistema:
 - Windows (32x o 64)
 - Almeno 512MB di RAM 
