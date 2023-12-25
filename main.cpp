@@ -92,13 +92,6 @@ int main()
 		cout << S << endl;
 		cout << "._._.|___________________\n|_|_||__________________/\n     |         " << endl;
 	}
-	else 
-	{
-		cout << "Non sei riuscito neanche ad inserire un'arma..." << endl;
-		fine();
-		system("pause");
-		return 0;
-	}
 
 	Sleep(3000);
 
