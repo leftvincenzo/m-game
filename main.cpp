@@ -176,22 +176,24 @@ int main()
 		cout << "    _|-|_    _| |_" << endl;
 		cout << div << "--" << div << endl;
 		cout << "Hai deciso di combattere contro il mostro!" << endl;
+		srand(time(NULL));
+		int a = rand() % 41, b = rand() % 41;
+		int risp = a + b, solu;
+		cout << "Risolvi la seguente addizione: " << a << " + " << b << endl;
+		cin >> solu;
 
-		Sleep(4000);
-		system("cls");
-		system("color b");
-		v -= 3;
-
-		exp++;
-		cout << div << "[" << n << "]" << div << endl;
-		cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
-		cout << div << "--" << div << endl;
-		cout << S << endl;
-		cout << pl << endl;
-		cout << div << "--" << div << endl;
-		cout << "Hai sconfitto il mostro!" << endl;
-		cout << "Stato salute aggiornato." << endl;
-		Sleep(3000);
+		if (solu == risp)
+		{
+			cout << "Risposta Giusta!\nHai sconfitto il mostro!!" << endl;
+			Sleep(3000);
+			v -= 3;
+		}
+		else
+		{
+			Sleep(3000);
+			fine();
+			v -= 3;
+		}
 	}
 
 	// MISSION II
