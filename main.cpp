@@ -212,12 +212,10 @@ int main()
 
 	if (ds == 1)
 	{
-		int a, b, solu, risp;
+		int solu, risp;
 		cout << "Sei finito in un burrone!" << endl;
 		srand(time(NULL));
-		a = rand() % 3;
-		Sleep(1000);
-		b = rand() % 5;
+			int a = rand() % 41, b = rand() % 41;
 		risp = a + b;
 		cout << "Risolvi la seguente addizione: " << a << " + " << b << endl;
 		cin >> solu;
@@ -241,6 +239,7 @@ int main()
 			Sleep(2000);
 		}
 	}
+
 	// MISSION III
 	system("cls");
 	exp++;
