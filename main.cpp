@@ -250,7 +250,7 @@ int main()
 	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
 	cout << div << "--" << div << endl;
 	cout << S << endl;
-	cout << "    (+!+)      (@-@)" << endl;
+	cout << "    (+!+)       (@-@)" << endl;
 	cout << "    __|__    	 _|_ " << endl;
 	cout << "      |     	  |	" << endl;
 	cout << "    _|-|_    	 L L" << endl;
@@ -273,7 +273,7 @@ int main()
 
 		if (solu == risp) 
 		{
-			cout << "Risposta Giusta!\nIl mercante è stato sconfitto!" << endl;
+			cout << "Risposta Giusta!\nIl mercante e' stato sconfitto!" << endl;
 			Sleep(3000);
 			fine();
 		}
