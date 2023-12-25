@@ -4,7 +4,6 @@
 using namespace std;
 
 // GAMEOVER
-
 void fine() {
 
 	system("cls");
@@ -262,9 +261,25 @@ int main()
 	{
 		cout << "Scelta errata..." << endl;
 		Sleep(2000);
-		cout << "Il Mercante ti ha teso una trappola!" << endl;
-		cout << "Sei morto." << endl;
-		fine();
+		cout << "Il Mercante ti vuole combattere!" << endl;
+		srand(time(NULL));
+		int a = rand() % 41, b = rand() % 41;
+		int risp = a + b, solu;
+		cout << "Risolvi la seguente addizione: " << a << " + " << b << endl;
+		cin >> solu;
+
+		if (solu == risp) 
+		{
+			cout << "Risposta Giusta!\nIl mercante è stato sconfitto!" << endl;
+			Sleep(3000);
+			fine();
+		}
+		else 
+		{
+			Sleep(3000);
+			fine();
+		}
+
 	}
 	else
 	{
