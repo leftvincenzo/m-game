@@ -4,7 +4,8 @@
 using namespace std;
 
 // GAMEOVER
-void fine() {
+void fine() 
+{
 
 	system("cls");
 	system("color c");
@@ -292,4 +293,5 @@ int main()
 		system("pause");
 		return 0;
 	}
+
 }
