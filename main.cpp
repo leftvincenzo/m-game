@@ -11,7 +11,7 @@ void fine()
 	system("color c");
 
 	cout << "   _____          __  __ ______    ______      ________ _____  \n  / ____|   /\\   |  \\/  |  ____|  / __ \\ \\    / /  ____|  __ \\ \n | |  __   /  \\  | \\  / | |__    | |  | \\ \\  / /| |__  | |__) |\n | | |_ | / /\\ \\ | |\\/| |  __|   | |  | |\\ \\/ / |  __| |  _  / \n | |__| |/ ____ \\| |  | | |____  | |__| | \\  /  | |____| | \\ \\ \n  \\_____/_/    \\_\\_|  |_|______|  \\____/   \\/   |______|_|  \\_\\\n " << endl;
-	cout << "  ____________________________________________________________\n |                                                            |\n |             CREDITI DEL CREATORE DI M-GAME                 |\n |____________________________________________________________|\n |                                                            |\n |  Data ultima modifica:        25/12/2023                   |\n |  Versione gioco:              2.0                          |\n |                                                            |\n |____________________________________________________________|\n " << endl;
+	cout << "  ____________________________________________________________\n |                                                            |\n |             CREDITI DEL CREATORE DI M-GAME                 |\n |____________________________________________________________|\n |                                                            |\n |  Data ultima modifica:        28/12/2023                   |\n |  Versione gioco:              2.1                          |\n |                                                            |\n |____________________________________________________________|\n " << endl;
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -21,11 +21,13 @@ void fine()
 		system("color 4");
 	}
 
+	system("pause");
+	system("exit");
 }
 
 int main()
 {
-	system("title [M-GAME] - v2.0");
+	system("title [M-GAME] - v2.1");
 
 	// DECLARETIONS
 	string n, div = "-----------", a = "|", pl = "    (+!+)\n    __|__    \n      | \n    _|-|_    ";
@@ -54,7 +56,7 @@ int main()
 	cout << div << "--" << div << endl;
 	cout << "La tua avventura iniziera tra 5 secondi!!" << endl;
 
-	Sleep(5000);
+	Sleep(5*1000);
 	system("cls");
 	system("color 1");
 
@@ -114,7 +116,7 @@ int main()
 	if (s1 == 1)
 	{
 		exp++;
-		v = v - 2;
+		v -= 2;
 		cout << "L'orco e' riuscito a colpirti..." << endl;
 		Sleep(2000);
 		cout << "Sei riuscito comunque a scappare!" << endl;
@@ -133,7 +135,7 @@ int main()
 		cout << "    (x!X)      | | (*) " << endl;
 		cout << "    __|__    --| |--|" << endl;
 		cout << "      |        | |  |" << endl;
-		cout << "    _|-|_    _| |_" << endl;
+		cout << "    _|-|_     _| |_" << endl;
 		cout << div << "--" << div << endl;
 		cout << "Hai scelto di fare amicizia con il mostro!" << endl;
 		cout << div << "--" << div << endl;
@@ -168,7 +170,7 @@ int main()
 		cout << "    (+!+)      | | (*) " << endl;
 		cout << "    __|__    --| |--|" << endl;
 		cout << "      |        | |  |" << endl;
-		cout << "    _|-|_    _| |_" << endl;
+		cout << "    _|-|_     _| |_" << endl;
 		cout << div << "--" << div << endl;
 		cout << "Hai deciso di combattere contro il mostro!" << endl;
 		srand(time(NULL));
@@ -249,7 +251,7 @@ int main()
 	cout << "      |     	  |	" << endl;
 	cout << "    _|-|_    	 L L" << endl;
 	cout << div << "--" << div << endl;
-	cout << "Hai incontrato uno strambo mercante!\nTi sta offrendo di scambiare la tua arma in cambio di una scatola misteriosa, che fai?" << endl;
+	cout << "Hai incontrato uno strambo mercante!\nTi sta offrendo di scambiare la tua arma \nin cambio di una scatola misteriosa, che fai?" << endl;
 	cout << div << "--" << div << endl;
 	cout << "1) Si" << a << " 2) No" << endl;
 	cin >> sc;
@@ -268,8 +270,6 @@ int main()
 		if (solu == risp) 
 		{
 			cout << "Risposta Giusta!\nIl mercante e' stato sconfitto!" << endl;
-			Sleep(3000);
-			fine();
 		}
 		else 
 		{
@@ -286,12 +286,54 @@ int main()
 		cout << "Voci dicono che il mercante sia un truffatore.." << endl;
 		Sleep(3000);
 
-		// END
-		Sleep(3000);
-		fine();
-
-		system("pause");
-		return 0;
 	}
+
+	// BOSS
+	system("cls");
+	exp++;
+	system("color c");
+	cout << "Hai incontrato il boss finale del gioco..." << endl;
+	Sleep(2*1000);
+	system("color 4");
+	cout << "Preparati a combattere..." << endl;
+	Sleep(3*1000);
+	system("color b");
+
+	cout << div << "[" << n << "]" << div << endl;
+	cout << a << "HP:" << v << a << " " << a << "ARMA:" << r << a << S << a << "EXP:" << exp << a << endl;
+	cout << div << "--" << div << endl;
+	cout << S << endl;
+	cout << "    (+!+)    *o*  " << endl;
+	cout << "    __|__    <|>  " << endl;
+	cout << "      |       |   " << endl;
+	cout << "    _|-|_    ( )  " << endl;
+	cout << div << "--" << div << endl;
+	cout << "BATTAGLIA FINALE" << endl;
+	cout << div << "--" << div << endl;
+	while (v > 0) {
+		int c = rand() % 41, d = rand() % 42;
+		int rispostaCorretta = c + d, rispostaUtente;
+
+		cout << "Risolvi la seguente addizione: " << c << " + " << d << endl;
+		cin >> rispostaUtente;
+
+		if (rispostaUtente == rispostaCorretta) {
+			cout << "Risposta giusta, 5 danni inflitti al boss!" << endl;
+			exp++;
+		}
+		else {
+			cout << "Risposta sbagliata!!!!\nIl boss ti ha inflitto danno!" << endl;
+			v -= 3;
+		}
+	}
+
+	if (v == 0)
+	{
+		cout << "Il boss ti ha sconfitto!!" << endl;
+		cout << "RIP: " << n << endl;
+		fine();
+	}
+	else
+		fine();
 
 }
