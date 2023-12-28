@@ -13,5 +13,5 @@ M-GAME ti permetterà di combattere contro mostri, completare missioni e scappar
 2. Esegui il programma.
 
 ## Crediti:
-- **Data ultima modifica:** 26/12/2023
-- **Versione gioco:** 2.0
+- **Data ultima modifica:** 28/12/2023
+- **Versione gioco:** 2.1
