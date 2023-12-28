@@ -308,7 +308,7 @@ int main()
 	cout << "      |       |   " << endl;
 	cout << "    _|-|_    ( )  " << endl;
 	cout << div << "--" << div << endl;
-	cout << "BATTAGLIA FINALE" << endl;
+	cout << "BATTAGLIA FINALE CONTRO BACONG" << endl;
 	cout << div << "--" << div << endl;
 	while (v > 0) {
 		int c = rand() % 41, d = rand() % 42;
@@ -318,11 +318,11 @@ int main()
 		cin >> rispostaUtente;
 
 		if (rispostaUtente == rispostaCorretta) {
-			cout << "Risposta giusta, 5 danni inflitti al boss!" << endl;
+			cout << "Risposta giusta, 5 danni inflitti a Bacong!" << endl;
 			exp++;
 		}
 		else {
-			cout << "Risposta sbagliata!!!!\nIl boss ti ha inflitto danno!" << endl;
+			cout << "Risposta sbagliata!!!!\nIl Bacong ti ha inflitto danno!" << endl;
 			v -= 3;
 		}
 	}
